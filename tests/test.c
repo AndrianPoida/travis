@@ -2,33 +2,23 @@
 #include <stdlib.h>
 
 #include <check.h>
-#include <module.h>
 
-START_TEST (test_sample)
+
+START_TEST (test1)
 {
     int n=0;
-    //ck_assert(1);
     ck_assert_int_eq(n, 1);
-}
-END_TEST
-
-START_TEST (test_sample_2)
-{
-    int n=0;
-    //ck_assert(1);
-    ck_assert_int_eq(n, 0);
 }
 END_TEST
 
 Suite *test_suite() {
   Suite *s = suite_create("Module");
-  TCase *tc_sample;
+  TCase *tc_test;
 
-  tc_sample = tcase_create("TestCase");
-  tcase_add_test(tc_sample, test_sample);
-  tcase_add_test(tc_sample, test_sample_2);
+  tc_test = tcase_create("TestCase");
+  tcase_add_test(tc_test, test1);
 
-  suite_add_tcase(s, tc_sample);
+  suite_add_tcase(s, tc_test);
 
   return s;
 }
@@ -42,5 +32,6 @@ int main() {
 
   int num_tests_failed = srunner_ntests_failed(sr);
   srunner_free(sr);
+
   return num_tests_failed;
 }
