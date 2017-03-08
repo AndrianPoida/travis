@@ -7,7 +7,7 @@
 START_TEST (test1)
 {
     int n=0;
-    ck_assert_int_eq(n, 1);
+    ck_assert_int_eq(n, 0);
 }
 END_TEST
 
